@@ -1,6 +1,15 @@
 export default function FeatureGrid() {
   const steps = [
     {
+      title: "Set your goals",
+      description: "Tell us what you're working on—portraits, gesture drawing, perspective. We'll tailor feedback to your focus areas.",
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+        </svg>
+      ),
+    },
+    {
       title: "Draw",
       description: "Sketch naturally on iPad with Apple Pencil. No gimmicks.",
       icon: (
@@ -20,7 +29,7 @@ export default function FeatureGrid() {
     },
     {
       title: "Grow",
-      description: "Get Growth Notes with clear pointers and a tiny practice suggestion for next time.",
+      description: "Get Growth Notes personalized to your goals—clear pointers and a tiny practice suggestion for next time.",
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -37,25 +46,25 @@ export default function FeatureGrid() {
             How it works
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-400">
-            Three simple steps to help you grow as an artist.
+            Four simple steps to get feedback that's actually helpful.
           </p>
         </div>
-        <div className="mx-auto mt-16 max-w-5xl grid grid-cols-1 gap-8 sm:grid-cols-3">
+        <div className="mx-auto mt-16 max-w-6xl grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
             <div
               key={step.title}
-              className="relative p-8 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800"
+              className="relative p-6 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-blue-600 text-white">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-600 text-white">
                   {step.icon}
                 </div>
-                <span className="text-4xl font-bold text-blue-600">{index + 1}</span>
+                <span className="text-3xl font-bold text-blue-600">{index + 1}</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 {step.title}
               </h3>
-              <p className="text-base text-gray-600 dark:text-gray-400">
+              <p className="text-sm text-gray-600 dark:text-gray-400">
                 {step.description}
               </p>
             </div>

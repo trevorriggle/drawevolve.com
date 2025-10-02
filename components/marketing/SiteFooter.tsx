@@ -42,7 +42,7 @@ export default function SiteFooter() {
           </nav>
 
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            © {new Date().getFullYear()} DrawEvolve. All rights reserved.
+            DrawEvolve is a product by RIG Tech, LLC. © {new Date().getFullYear()} All rights reserved.
           </p>
         </div>
       </div>
