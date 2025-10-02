@@ -18,7 +18,7 @@ export default function EmailCapture() {
     }
 
     setStatus("submitting");
-    track("email_subscribe_submit", { source: "landing" });
+    track("waitlist_submit", { source: "ipad_beta" });
 
     try {
       const response = await fetch("/api/subscribe", {
@@ -31,7 +31,7 @@ export default function EmailCapture() {
 
       if (response.ok && data.ok) {
         setStatus("success");
-        setMessage("Thanks! Check your inbox for updates.");
+        setMessage("You're on the list—thank you!");
         setEmail("");
       } else {
         setStatus("error");
@@ -44,13 +44,13 @@ export default function EmailCapture() {
   };
 
   return (
-    <section id="email-capture" className="py-24 sm:py-32 bg-blue-600">
+    <section id="waitlist" className="py-24 sm:py-32 bg-blue-600">
       <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
         <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          Get early access
+          iPad Beta Waitlist
         </h2>
         <p className="mt-4 text-lg text-blue-100">
-          Be the first to know when Pro features launch. No spam, just updates.
+          Be first to try DrawEvolve. We'll invite testers in waves and send occasional progress notes. No spam.
         </p>
         <form onSubmit={handleSubmit} className="mt-8 flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
           <input
@@ -66,7 +66,7 @@ export default function EmailCapture() {
             disabled={status === "submitting"}
             className="rounded-lg bg-white px-6 py-3 text-base font-semibold text-blue-600 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
-            {status === "submitting" ? "Subscribing..." : "Get Early Access"}
+            {status === "submitting" ? "Joining..." : "Join Beta"}
           </button>
         </form>
         {message && (

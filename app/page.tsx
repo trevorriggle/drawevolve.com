@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import Hero from "@/components/marketing/Hero";
 import FeatureGrid from "@/components/marketing/FeatureGrid";
+import ArtistBillOfRights from "@/components/marketing/ArtistBillOfRights";
 import DemoTeaser from "@/components/marketing/DemoTeaser";
-import PricingTeaser from "@/components/marketing/PricingTeaser";
 import FAQ from "@/components/marketing/FAQ";
 import EmailCapture from "@/components/marketing/EmailCapture";
 import SiteFooter from "@/components/marketing/SiteFooter";
 
 export const metadata: Metadata = {
-  title: "DrawEvolve — Sketch. Evolve. Ship.",
-  description: "Draw on a canvas, annotate ideas, and send them to AI for instant analysis.",
+  title: "DrawEvolve — Grow as an artist, one drawing at a time",
+  description: "Supportive, AI-guided feedback after you draw—so you improve. No auto-finishing. No shortcuts. Built for artists on iPad.",
   alternates: {
     canonical: "https://drawevolve.com",
   },
@@ -29,14 +29,14 @@ export default function DrawEvolvePage() {
           </div>
 
           <div className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-              Features
+            <a href="#how-it-works" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              How it works
+            </a>
+            <a href="#ethos" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              Our ethos
             </a>
             <a href="#demo" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
               Demo
-            </a>
-            <a href="#pricing" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-              Pricing
             </a>
             <a href="#faq" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
               FAQ
@@ -44,10 +44,10 @@ export default function DrawEvolvePage() {
           </div>
 
           <a
-            href="/app"
+            href="#waitlist"
             className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
           >
-            Start Drawing
+            Join the iPad beta
           </a>
         </nav>
       </header>
@@ -56,8 +56,8 @@ export default function DrawEvolvePage() {
       <div className="pt-16">
         <Hero />
         <FeatureGrid />
+        <ArtistBillOfRights />
         <DemoTeaser />
-        <PricingTeaser />
         <FAQ />
         <EmailCapture />
         <SiteFooter />

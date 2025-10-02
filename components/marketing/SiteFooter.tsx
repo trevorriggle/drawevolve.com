@@ -12,7 +12,13 @@ export default function SiteFooter() {
             </span>
           </div>
 
-          <nav className="flex gap-6">
+          <nav className="flex flex-wrap justify-center gap-4 md:gap-6">
+            <a
+              href="/privacy"
+              className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              Privacy
+            </a>
             <a
               href="/terms"
               className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -20,10 +26,18 @@ export default function SiteFooter() {
               Terms
             </a>
             <a
-              href="/privacy"
+              href="mailto:hello@drawevolve.com"
               className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
-              Privacy
+              Contact
+            </a>
+            <a
+              href="https://twitter.com/drawevolve"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              X
             </a>
           </nav>
 

@@ -7,24 +7,20 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "How fast is the AI analysis?",
-      answer: "Most analyses complete in under 3 seconds. Pro users get priority queue access for even faster results during peak times.",
+      question: "Is this 'AI art' that finishes my drawing?",
+      answer: "No. DrawEvolve never auto-finishes your piece. It gives feedback so you finish it yourself and improve your skills along the way.",
     },
     {
-      question: "Is my work private and secure?",
-      answer: "Yes. All drawings are encrypted in transit and at rest. You control sharing—projects are private by default. We never train AI models on your data.",
+      question: "Will my images be used to train models?",
+      answer: "No by default. Your art stays private. If we ever explore opt-in research, we'll ask clearly first.",
     },
     {
-      question: "What file formats can I export?",
-      answer: "Currently PNG with transparency. SVG and layered PSD exports are on our roadmap for Pro users.",
+      question: "Which devices are supported?",
+      answer: "iPad first (iPadOS 16+). We're starting with iPad to deliver the best Apple Pencil experience. Other platforms later.",
     },
     {
-      question: "Can I use DrawEvolve offline?",
-      answer: "Not yet. We're exploring offline canvas editing with sync. AI analysis requires an internet connection.",
-    },
-    {
-      question: "What's on the roadmap?",
-      answer: "Multi-user live collaboration, version history, integrations with Figma/Miro, custom AI prompts, and mobile apps. Join our mailing list for updates!",
+      question: "I used the old web prototype—is that still a thing?",
+      answer: "The web prototype proved the concept. The product is now iPad-first, built specifically for artists who draw with Apple Pencil.",
     },
   ];
 
