@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "DrawEvolve — Sketch. Evolve. Ship.",
   description: "Draw on a canvas, annotate ideas, and send them to AI for instant analysis.",
   alternates: {
-    canonical: "https://drawevolve.com/drawevolve",
+    canonical: "https://drawevolve.com",
   },
 };
 
