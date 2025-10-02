@@ -23,7 +23,7 @@ export default function EmailCapture() {
   return (
     <section
       id="waitlist"
-      className="relative py-24 sm:py-32 bg-gradient-to-br from-blue-500 via-blue-600 to-purple-600 overflow-hidden"
+      className="relative py-16 sm:py-20 bg-gradient-to-br from-blue-500 via-blue-600 to-purple-600 overflow-hidden"
     >
       {/* Decorative gradient orbs */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
@@ -33,14 +33,14 @@ export default function EmailCapture() {
         {/* Card with fade-in animation */}
         <div
           className={`
-            bg-white/10 backdrop-blur-lg rounded-3xl p-8 sm:p-12
+            bg-white/10 backdrop-blur-lg rounded-3xl p-6 sm:p-8
             shadow-2xl border border-white/20
             transition-all duration-1000 ease-out
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
           `}
         >
-          <div className="text-center mb-8">
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-4">
+          <div className="text-center mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-3">
               iPad Beta Waitlist
             </h2>
             <p className="text-lg sm:text-xl text-white/90 max-w-xl mx-auto leading-relaxed">
@@ -49,8 +49,8 @@ export default function EmailCapture() {
           </div>
 
           {/* Tally form container with custom styling */}
-          <div className="mt-8 relative">
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+          <div className="mt-6 relative">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
               <iframe
                 data-tally-src="https://tally.so/embed/nPV1G0?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
                 loading="lazy"
@@ -66,7 +66,7 @@ export default function EmailCapture() {
           </div>
 
           {/* Made with Tally badge - subtle and repositioned */}
-          <div className="mt-8 text-center">
+          <div className="mt-6 text-center">
             <a
               href="https://tally.so"
               target="_blank"

@@ -14,7 +14,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950 px-6 py-24 sm:py-32 lg:px-8">
+    <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950 px-6 py-16 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-4xl text-center">
         <h1 className="text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-7xl">
           Grow as an artist, one drawing at a time.
