@@ -23,7 +23,7 @@ export default function EmailCapture() {
   return (
     <section
       id="waitlist"
-      className="relative py-16 sm:py-20 bg-gradient-to-br from-blue-500 via-blue-600 to-purple-600 overflow-hidden"
+      className="relative py-24 sm:py-32 bg-gradient-to-br from-blue-500 via-blue-600 to-purple-600 overflow-hidden"
     >
       {/* Decorative gradient orbs */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>

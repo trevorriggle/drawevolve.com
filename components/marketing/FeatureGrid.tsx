@@ -39,7 +39,7 @@ export default function FeatureGrid() {
   ];
 
   return (
-    <section id="how-it-works" className="py-16 sm:py-20 bg-white dark:bg-gray-950">
+    <section id="how-it-works" className="relative py-20 sm:py-28 bg-white dark:bg-gray-950 border-y border-gray-200 dark:border-gray-800">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
@@ -53,7 +53,7 @@ export default function FeatureGrid() {
           {steps.map((step, index) => (
             <div
               key={step.title}
-              className="relative p-6 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800"
+              className="relative p-6 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-900/50 rounded-2xl border border-gray-200 dark:border-gray-800 hover:shadow-lg hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-600 text-white">

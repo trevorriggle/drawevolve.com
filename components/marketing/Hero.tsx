@@ -14,8 +14,13 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950 px-6 py-16 sm:py-20 lg:px-8">
-      <div className="mx-auto max-w-4xl text-center">
+    <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-blue-50/30 dark:from-gray-900 dark:via-gray-950 dark:to-blue-950/20 px-6 py-24 sm:py-32 lg:px-8">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl" />
+      </div>
+      <div className="relative mx-auto max-w-4xl text-center">
         <h1 className="text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-7xl">
           Grow as an artist, one drawing at a time.
         </h1>

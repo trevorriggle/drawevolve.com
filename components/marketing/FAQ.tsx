@@ -25,7 +25,7 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="faq" className="relative py-20 sm:py-28 bg-white dark:bg-gray-950 border-y border-gray-200 dark:border-gray-800">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
@@ -36,7 +36,7 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-950 rounded-lg border border-gray-200 dark:border-gray-800"
+              className="bg-gradient-to-r from-gray-50 to-white dark:from-gray-900 dark:to-gray-900/50 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-blue-300 dark:hover:border-blue-700 hover:shadow-md transition-all duration-200"
             >
               <dt>
                 <button
