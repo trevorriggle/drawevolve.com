@@ -21,6 +21,11 @@ export default function Hero() {
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-500/10 rounded-full blur-3xl" />
       </div>
       <div className="relative mx-auto max-w-4xl text-center">
+        <img
+          src="/Asset 3@4x.png"
+          alt="DrawEvolve Logo"
+          className="mx-auto mb-8 h-24 w-auto"
+        />
         <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl">
           Grow as an artist, one drawing at a time.
         </h1>

@@ -53,8 +53,8 @@ export default function DrawEvolvePage() {
       <div className="pt-16">
         <Hero />
         <FeatureGrid />
-        <ArtistBillOfRights />
         <DemoTeaser />
+        <ArtistBillOfRights />
         <FAQ />
         <EmailCapture />
         <SiteFooter />
