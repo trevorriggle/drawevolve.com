@@ -23,13 +23,13 @@ export default function DemoTeaser() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
             {/* Sketch area - left side */}
             <div className="lg:col-span-3 bg-white dark:bg-gray-950 rounded-2xl p-8 border border-gray-200 dark:border-gray-800 shadow-xl">
-              <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-850 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+              <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-850 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 flex items-center justify-center">
                 <Image
-                  src="/marketing/demo.png"
-                  alt="Example sketch in DrawEvolve"
+                  src="/marketing/ipad-screenshot.png"
+                  alt="DrawEvolve on iPad"
                   width={800}
                   height={600}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 text-center">
