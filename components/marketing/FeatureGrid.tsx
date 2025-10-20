@@ -29,7 +29,7 @@ export default function FeatureGrid() {
     },
     {
       title: "Grow",
-      description: "Get Growth Notes personalized to your goals with clear pointers and a tiny practice suggestion for next time.",
+      description: "Get Growth Notes personalized to your goals with clear pointers and a tiny practice suggestion for next time. View your critique history over time to track your progress.",
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />

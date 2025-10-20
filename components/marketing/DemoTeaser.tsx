@@ -40,9 +40,7 @@ export default function DemoTeaser() {
             {/* Growth Notes - right side */}
             <div className="lg:col-span-2 bg-gradient-to-br from-gray-100 to-white dark:from-gray-900 dark:to-gray-950 rounded-2xl p-6 border-2 border-gray-300 dark:border-gray-700 shadow-xl carbon-fiber">
               <div className="flex items-center gap-2 mb-4">
-                <svg className="w-5 h-5 text-gray-900 dark:text-gray-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                </svg>
+                <span className="text-lg">✏️</span>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                   Growth Notes
                 </h3>
@@ -52,25 +50,40 @@ export default function DemoTeaser() {
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-900 dark:bg-gray-100 flex items-center justify-center text-xs font-medium text-white dark:text-gray-900">
                     1
                   </span>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">
-                    Your proportions show real understanding, keep refining the shoulder angles.
-                  </p>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
+                      Strong Foundations
+                    </p>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      Your proportions show genuine understanding — keep refining subtle angles like the shoulders for even better balance.
+                    </p>
+                  </div>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-900 dark:bg-gray-100 flex items-center justify-center text-xs font-medium text-white dark:text-gray-900">
                     2
                   </span>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">
-                    Try adding lighter values in the background to make your subject pop.
-                  </p>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
+                      Light and Atmosphere
+                    </p>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      Consider introducing softer background values to make your main subject stand out and feel more dimensional.
+                    </p>
+                  </div>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-900 dark:bg-gray-100 flex items-center justify-center text-xs font-medium text-white dark:text-gray-900">
                     3
                   </span>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">
-                    Next time: quick 5 min gesture study of hands for more confidence.
-                  </p>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
+                      Practice Focus
+                    </p>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      Next session, try a quick 5 minute gesture sketch to build confidence and loosen up your lines.
+                    </p>
+                  </div>
                 </li>
               </ul>
             </div>
