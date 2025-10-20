@@ -2,12 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DrawEvolve — Grow as an artist, one drawing at a time",
-  description: "Supportive, AI-guided feedback after you draw—so you improve. No auto-finishing. No shortcuts. Built for artists on iPad.",
+  title: "DrawEvolve: Grow as an artist, one drawing at a time",
+  description: "Supportive, AI guided feedback after you draw so you improve. No auto finishing. No shortcuts. Built for artists on iPad.",
   metadataBase: new URL("https://drawevolve.com"),
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
   openGraph: {
-    title: "DrawEvolve — Grow as an artist, one drawing at a time",
-    description: "Supportive, AI-guided feedback after you draw—so you improve. No auto-finishing. No shortcuts. Built for artists on iPad.",
+    title: "DrawEvolve: Grow as an artist, one drawing at a time",
+    description: "Supportive, AI guided feedback after you draw so you improve. No auto finishing. No shortcuts. Built for artists on iPad.",
     url: "https://drawevolve.com",
     siteName: "DrawEvolve",
     images: [
@@ -15,7 +19,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "DrawEvolve - AI-guided feedback for artists",
+        alt: "DrawEvolve AI guided feedback for artists",
       },
     ],
     locale: "en_US",
@@ -23,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "DrawEvolve — Grow as an artist, one drawing at a time",
-    description: "Supportive, AI-guided feedback after you draw—so you improve. No auto-finishing. No shortcuts. Built for artists on iPad.",
+    title: "DrawEvolve: Grow as an artist, one drawing at a time",
+    description: "Supportive, AI guided feedback after you draw so you improve. No auto finishing. No shortcuts. Built for artists on iPad.",
     images: ["/og.png"],
   },
 };

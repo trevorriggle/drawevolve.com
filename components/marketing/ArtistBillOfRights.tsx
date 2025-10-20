@@ -7,7 +7,7 @@ export default function ArtistBillOfRights() {
   ];
 
   return (
-    <section id="ethos" className="relative py-20 sm:py-28 bg-gradient-to-b from-blue-600 to-blue-700 dark:from-blue-900 dark:to-blue-950 overflow-hidden">
+    <section id="ethos" className="relative py-20 sm:py-28 bg-gradient-to-b from-gray-800 to-gray-900 dark:from-gray-900 dark:to-black overflow-hidden carbon-fiber-subtle">
       {/* Decorative pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -19,17 +19,17 @@ export default function ArtistBillOfRights() {
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Artist Bill of Rights
           </h2>
-          <p className="mt-4 text-lg leading-8 text-blue-100 max-w-2xl mx-auto">
-            We built DrawEvolve because harsh critique culture sucks. You deserve feedback that helps you grow—without the judgment.
+          <p className="mt-4 text-lg leading-8 text-gray-300 max-w-2xl mx-auto">
+            We built DrawEvolve because harsh critique culture sucks. You deserve feedback that helps you grow without the judgment.
           </p>
         </div>
 
-        <div className="bg-white/95 dark:bg-gray-950/95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-blue-300/20 dark:border-blue-700/20">
+        <div className="bg-white/95 dark:bg-gray-950/95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-gray-300/20 dark:border-gray-700/20">
           <ul className="space-y-4">
             {rights.map((right, index) => (
               <li key={index} className="flex gap-4">
                 <svg
-                  className="h-6 w-6 flex-none text-blue-600 mt-0.5"
+                  className="h-6 w-6 flex-none text-gray-900 dark:text-gray-100 mt-0.5"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -48,8 +48,8 @@ export default function ArtistBillOfRights() {
 
           <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800">
             <div className="flex items-center gap-3">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg">
-                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 dark:from-gray-100 dark:to-gray-300 flex items-center justify-center shadow-lg">
+                <svg className="w-6 h-6 text-white dark:text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>

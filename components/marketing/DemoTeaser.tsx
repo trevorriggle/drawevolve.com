@@ -23,10 +23,14 @@ export default function DemoTeaser() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
             {/* Sketch area - left side */}
             <div className="lg:col-span-3 bg-white dark:bg-gray-950 rounded-2xl p-8 border border-gray-200 dark:border-gray-800 shadow-xl">
-              <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-850 rounded-lg flex items-center justify-center border border-gray-200 dark:border-gray-700">
-                <svg className="w-16 h-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                </svg>
+              <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-850 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+                <Image
+                  src="/marketing/demo.png"
+                  alt="Example sketch in DrawEvolve"
+                  width={800}
+                  height={600}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 text-center">
                 Your sketch
@@ -34,9 +38,9 @@ export default function DemoTeaser() {
             </div>
 
             {/* Growth Notes - right side */}
-            <div className="lg:col-span-2 bg-gradient-to-br from-blue-50 to-white dark:from-blue-950/30 dark:to-gray-950 rounded-2xl p-6 border-2 border-blue-200 dark:border-blue-800 shadow-xl">
+            <div className="lg:col-span-2 bg-gradient-to-br from-gray-100 to-white dark:from-gray-900 dark:to-gray-950 rounded-2xl p-6 border-2 border-gray-300 dark:border-gray-700 shadow-xl carbon-fiber">
               <div className="flex items-center gap-2 mb-4">
-                <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-5 h-5 text-gray-900 dark:text-gray-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -45,15 +49,15 @@ export default function DemoTeaser() {
               </div>
               <ul className="space-y-4">
                 <li className="flex gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-xs font-medium text-blue-600">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-900 dark:bg-gray-100 flex items-center justify-center text-xs font-medium text-white dark:text-gray-900">
                     1
                   </span>
                   <p className="text-sm text-gray-700 dark:text-gray-300">
-                    Your proportions show real understanding—keep refining the shoulder angles.
+                    Your proportions show real understanding, keep refining the shoulder angles.
                   </p>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-xs font-medium text-blue-600">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-900 dark:bg-gray-100 flex items-center justify-center text-xs font-medium text-white dark:text-gray-900">
                     2
                   </span>
                   <p className="text-sm text-gray-700 dark:text-gray-300">
@@ -61,11 +65,11 @@ export default function DemoTeaser() {
                   </p>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-xs font-medium text-blue-600">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-900 dark:bg-gray-100 flex items-center justify-center text-xs font-medium text-white dark:text-gray-900">
                     3
                   </span>
                   <p className="text-sm text-gray-700 dark:text-gray-300">
-                    Next time: quick 5-min gesture study of hands for more confidence.
+                    Next time: quick 5 min gesture study of hands for more confidence.
                   </p>
                 </li>
               </ul>

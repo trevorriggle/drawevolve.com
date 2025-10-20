@@ -23,11 +23,11 @@ export default function EmailCapture() {
   return (
     <section
       id="waitlist"
-      className="relative py-24 sm:py-32 bg-gradient-to-br from-blue-500 via-blue-600 to-purple-600 overflow-hidden"
+      className="relative py-24 sm:py-32 bg-gradient-to-br from-gray-800 via-gray-900 to-black overflow-hidden carbon-fiber-subtle"
     >
       {/* Decorative gradient orbs */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-gray-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gray-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
 
       <div className="relative mx-auto max-w-2xl px-6 lg:px-8">
         {/* Card with fade-in animation */}
@@ -44,7 +44,7 @@ export default function EmailCapture() {
               iPad Beta Waitlist
             </h2>
             <p className="text-lg sm:text-xl text-white/90 max-w-xl mx-auto leading-relaxed">
-              Be first to try DrawEvolve. We'll invite testers in waves and send occasional progress notes. No spam.
+              Be first to try DrawEvolve. We will invite testers in waves and send occasional progress notes. No spam.
             </p>
           </div>
 
