@@ -3,73 +3,77 @@
 import { useState } from "react";
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
     {
-      question: "Is this AI art that finishes my drawing?",
-      answer: "No. DrawEvolve never auto finishes your piece. It gives feedback so you finish it yourself and improve your skills along the way.",
+      q: "Does this finish my drawing for me?",
+      a: "No. There is no button that touches your canvas. We read what you've made and write back. That's it.",
     },
     {
-      question: "Will my images be used to train models?",
-      answer: "No by default. Your art stays private. If we ever explore opt in research, we will ask clearly first.",
+      q: "Will my drawings be used to train models?",
+      a: "No. Your work isn't used for training by default. If we ever run opt-in research, we'll ask first, in plain English.",
     },
     {
-      question: "Which devices are supported?",
-      answer: "iPad first (iPadOS 16 or later). We are starting with iPad to deliver the best Apple Pencil experience. Other platforms later.",
+      q: "Which devices are supported?",
+      a: "iPad with Apple Pencil, iPadOS 16 or later. We started here because that's where most serious sketching happens. Other platforms later.",
     },
     {
-      question: "I used the old web prototype, is that still a thing?",
-      answer: "The web prototype proved the concept. The product is now iPad first, built specifically for artists who draw with Apple Pencil.",
+      q: "What happened to the old web prototype?",
+      a: "It got us through the question \"is this idea worth building?\". The answer was yes — so we rebuilt it native on iPad.",
     },
   ];
 
   return (
-    <section id="faq" className="relative py-20 sm:py-28 bg-white dark:bg-gray-950 border-y border-gray-200 dark:border-gray-800">
+    <section id="faq" className="relative py-24 sm:py-32 border-t border-rule">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-            Frequently asked questions
+        <div className="mb-12">
+          <p className="text-sm uppercase tracking-[0.2em] text-ink-mute mb-4">
+            Questions
+          </p>
+          <h2 className="font-serif text-4xl sm:text-5xl leading-tight tracking-tight text-ink">
+            The honest answers.
           </h2>
         </div>
-        <dl className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-r from-gray-50 to-white dark:from-gray-900 dark:to-gray-900/50 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 hover:shadow-md transition-all duration-200 carbon-fiber"
-            >
-              <dt>
-                <button
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="flex w-full items-start justify-between text-left px-6 py-4"
-                >
-                  <span className="text-base font-semibold text-gray-900 dark:text-white">
-                    {faq.question}
-                  </span>
-                  <span className="ml-6 flex h-7 items-center">
-                    <svg
-                      className={`h-6 w-6 transform transition-transform ${
-                        openIndex === index ? "rotate-180" : ""
+
+        <dl className="divide-y divide-rule border-y border-rule">
+          {faqs.map((item, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <div key={i}>
+                <dt>
+                  <button
+                    onClick={() => setOpenIndex(isOpen ? null : i)}
+                    className="flex w-full items-center justify-between gap-6 text-left py-6 group"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="font-serif text-xl sm:text-2xl text-ink group-hover:text-accent-deep transition-colors">
+                      {item.q}
+                    </span>
+                    <span
+                      className={`flex-none text-ink-mute font-serif text-2xl leading-none transition-transform ${
+                        isOpen ? "rotate-45" : ""
                       }`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
+                      aria-hidden="true"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                    </svg>
-                  </span>
-                </button>
-              </dt>
-              <dd className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-              }`}>
-                <div className="px-6 pb-4">
-                  <p className="text-base text-gray-600 dark:text-gray-400">{faq.answer}</p>
-                </div>
-              </dd>
-            </div>
-          ))}
+                      +
+                    </span>
+                  </button>
+                </dt>
+                <dd
+                  className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <p className="pb-6 pr-10 text-base leading-relaxed text-ink-soft text-pretty">
+                      {item.a}
+                    </p>
+                  </div>
+                </dd>
+              </div>
+            );
+          })}
         </dl>
       </div>
     </section>

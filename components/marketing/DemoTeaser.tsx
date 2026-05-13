@@ -2,90 +2,64 @@ import Image from "next/image";
 
 export default function DemoTeaser() {
   return (
-    <section id="demo" className="relative py-20 sm:py-28 bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900">
-      {/* Grid pattern background */}
-      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)`,
-          backgroundSize: '50px 50px',
-        }} />
-      </div>
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-            See what you'll get
-          </h2>
-          <p className="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-400">
-            Supportive feedback designed to help you improve, not replace your creativity.
+    <section id="demo" className="relative py-24 sm:py-32 bg-paper-warm border-t border-rule">
+      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+        <div className="max-w-2xl mb-16">
+          <p className="text-sm uppercase tracking-[0.2em] text-ink-mute mb-4">
+            What you get back
           </p>
+          <h2 className="font-serif text-4xl sm:text-5xl leading-tight tracking-tight text-ink text-balance">
+            A few honest notes. Not a rewrite of your drawing.
+          </h2>
         </div>
-        <div className="mx-auto max-w-5xl">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-            {/* Sketch area - left side */}
-            <div className="lg:col-span-3 bg-white dark:bg-gray-950 rounded-2xl p-8 border border-gray-200 dark:border-gray-800 shadow-xl">
-              <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-850 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 flex items-center justify-center">
-                <Image
-                  src="/marketing/ipad-screenshot.png"
-                  alt="DrawEvolve on iPad"
-                  width={800}
-                  height={600}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 text-center">
-                Your sketch
-              </p>
-            </div>
 
-            {/* Growth Notes - right side */}
-            <div className="lg:col-span-2 bg-gradient-to-br from-gray-100 to-white dark:from-gray-900 dark:to-gray-950 rounded-2xl p-6 border-2 border-gray-300 dark:border-gray-700 shadow-xl carbon-fiber">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-lg">✏️</span>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  Growth Notes
-                </h3>
-              </div>
-              <ul className="space-y-4">
-                <li className="flex gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-900 dark:bg-gray-100 flex items-center justify-center text-xs font-medium text-white dark:text-gray-900">
-                    1
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
-                      Strong Foundations
-                    </p>
-                    <p className="text-sm text-gray-700 dark:text-gray-300">
-                      Your proportions show genuine understanding — keep refining subtle angles like the shoulders for even better balance.
-                    </p>
-                  </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <figure className="lg:col-span-7">
+            <div className="aspect-[4/3] bg-paper border border-rule overflow-hidden">
+              <Image
+                src="/marketing/ipad-screenshot.png"
+                alt="A drawing in progress on iPad"
+                width={800}
+                height={600}
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <figcaption className="mt-3 text-sm text-ink-mute italic">
+              Your sketch — kept private.
+            </figcaption>
+          </figure>
+
+          <div className="lg:col-span-5">
+            <div className="border-l-2 border-accent pl-6">
+              <p className="text-sm uppercase tracking-[0.2em] text-accent-deep mb-3">
+                Growth notes
+              </p>
+              <ol className="space-y-7">
+                <li>
+                  <p className="font-serif text-xl text-ink mb-1">
+                    Strong foundations
+                  </p>
+                  <p className="text-base leading-relaxed text-ink-soft text-pretty">
+                    Your proportions read well. Push the shoulder line a touch — the right side is sitting higher than the left.
+                  </p>
                 </li>
-                <li className="flex gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-900 dark:bg-gray-100 flex items-center justify-center text-xs font-medium text-white dark:text-gray-900">
-                    2
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
-                      Light and Atmosphere
-                    </p>
-                    <p className="text-sm text-gray-700 dark:text-gray-300">
-                      Consider introducing softer background values to make your main subject stand out and feel more dimensional.
-                    </p>
-                  </div>
+                <li>
+                  <p className="font-serif text-xl text-ink mb-1">
+                    Light and atmosphere
+                  </p>
+                  <p className="text-base leading-relaxed text-ink-soft text-pretty">
+                    Background values are competing with the face. Try knocking them back half a step so the head reads first.
+                  </p>
                 </li>
-                <li className="flex gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-900 dark:bg-gray-100 flex items-center justify-center text-xs font-medium text-white dark:text-gray-900">
-                    3
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
-                      Practice Focus
-                    </p>
-                    <p className="text-sm text-gray-700 dark:text-gray-300">
-                      Next session, try a quick 5 minute gesture sketch to build confidence and loosen up your lines.
-                    </p>
-                  </div>
+                <li>
+                  <p className="font-serif text-xl text-ink mb-1">
+                    Try next
+                  </p>
+                  <p className="text-base leading-relaxed text-ink-soft text-pretty">
+                    Five minutes of loose gesture sketching before your next session — see if it carries into your line confidence.
+                  </p>
                 </li>
-              </ul>
+              </ol>
             </div>
           </div>
         </div>

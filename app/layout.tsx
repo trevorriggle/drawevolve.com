@@ -1,17 +1,31 @@
 import type { Metadata } from "next";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  display: "swap",
+  axes: ["opsz", "SOFT"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "DrawEvolve: Grow as an artist, one drawing at a time",
-  description: "Supportive, AI guided feedback after you draw so you improve. No auto finishing. No shortcuts. Built for artists on iPad.",
+  title: "DrawEvolve — feedback for artists, not finished art",
+  description: "A drawing companion for iPad. You draw; we send back a short critique tuned to what you're working on.",
   metadataBase: new URL("https://drawevolve.com"),
   icons: {
     icon: "/icon.png",
     apple: "/icon.png",
   },
   openGraph: {
-    title: "DrawEvolve: Grow as an artist, one drawing at a time",
-    description: "Supportive, AI guided feedback after you draw so you improve. No auto finishing. No shortcuts. Built for artists on iPad.",
+    title: "DrawEvolve — feedback for artists, not finished art",
+    description: "A drawing companion for iPad. You draw; we send back a short critique tuned to what you're working on.",
     url: "https://drawevolve.com",
     siteName: "DrawEvolve",
     images: [
@@ -19,7 +33,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "DrawEvolve AI guided feedback for artists",
+        alt: "DrawEvolve — feedback for artists",
       },
     ],
     locale: "en_US",
@@ -27,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "DrawEvolve: Grow as an artist, one drawing at a time",
-    description: "Supportive, AI guided feedback after you draw so you improve. No auto finishing. No shortcuts. Built for artists on iPad.",
+    title: "DrawEvolve — feedback for artists, not finished art",
+    description: "A drawing companion for iPad. You draw; we send back a short critique tuned to what you're working on.",
     images: ["/og.png"],
   },
 };
@@ -39,8 +53,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">{children}</body>
+    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
+      <body className="antialiased font-sans bg-paper text-ink">{children}</body>
     </html>
   );
 }

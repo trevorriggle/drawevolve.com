@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { track } from "@/lib/analytics";
 
 export default function Hero() {
@@ -8,49 +9,48 @@ export default function Hero() {
     document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const scrollToEthos = () => {
-    track("cta_bill_of_rights_click", { location: "hero" });
-    document.getElementById("ethos")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-gray-100 via-white to-gray-50 dark:from-gray-900 dark:via-gray-950 dark:to-black px-6 py-24 sm:py-32 lg:px-8 carbon-fiber-subtle">
-      {/* Decorative background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-400/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-500/10 rounded-full blur-3xl" />
-      </div>
-      <div className="relative mx-auto max-w-4xl text-center">
-        <img
-          src="/Asset 3@4x.png"
-          alt="DrawEvolve Logo"
-          className="mx-auto mb-8 h-24 w-auto"
-        />
-        <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl">
-          Grow as an artist, one drawing at a time.
-        </h1>
-        <p className="mt-6 text-lg leading-8 text-white max-w-2xl mx-auto">
-          Supportive, AI guided feedback after you draw so you improve. No auto finishing. No shortcuts.
-        </p>
+    <section className="relative px-6 pt-16 pb-20 sm:pt-24 sm:pb-28 lg:px-8">
+      <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="lg:col-span-7">
+          <p className="text-sm uppercase tracking-[0.2em] text-ink-mute mb-6">
+            For artists on iPad
+          </p>
+          <h1 className="font-serif text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.02] tracking-tight text-ink text-balance">
+            A drawing companion that <em className="not-italic text-accent-deep">talks back</em>.
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-ink-soft max-w-xl text-pretty">
+            Sketch on your iPad. Tap send. Get a short, specific critique tuned to what you're working on — proportion, value, gesture, whatever you're chasing. You finish the drawing. Always.
+          </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-x-6">
-          <button
-            onClick={scrollToWaitlist}
-            className="w-full sm:w-auto rounded-lg bg-white px-6 py-3 text-base font-semibold text-black shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors"
-          >
-            Join the iPad beta
-          </button>
-          <button
-            onClick={scrollToEthos}
-            className="w-full sm:w-auto text-base font-semibold leading-6 text-white hover:text-gray-200 transition-colors"
-          >
-            Artist Bill of Rights <span aria-hidden="true">→</span>
-          </button>
+          <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+            <button
+              onClick={scrollToWaitlist}
+              className="inline-flex items-center justify-center rounded-full bg-ink px-6 py-3 text-base font-medium text-paper hover:bg-accent-deep transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+            >
+              Join the iPad beta
+            </button>
+            <a
+              href="#how-it-works"
+              className="text-base font-medium text-ink-soft hover:text-ink underline underline-offset-[6px] decoration-rule hover:decoration-ink transition-colors"
+            >
+              See how it works
+            </a>
+          </div>
         </div>
 
-        <p className="mt-8 text-sm text-white">
-          Built by designers. Made for artists. Your art stays yours.
-        </p>
+        <div className="lg:col-span-5 relative">
+          <div className="relative aspect-[3/4] w-full max-w-md mx-auto">
+            <Image
+              src="/marketing/ipad-screenshot.png"
+              alt="DrawEvolve running on an iPad"
+              fill
+              priority
+              sizes="(min-width: 1024px) 32vw, 80vw"
+              className="object-contain"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
