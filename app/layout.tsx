@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const interTight = Inter_Tight({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-display",
   display: "swap",
-  axes: ["opsz", "SOFT"],
 });
 
 const inter = Inter({
@@ -16,16 +15,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "DrawEvolve — feedback for artists, not finished art",
-  description: "A drawing companion for iPad. You draw; we send back a short critique tuned to what you're working on.",
+  title: "DrawEvolve. A drawing app with a coach that remembers.",
+  description: "A universal iOS drawing app and an AI coach that remembers what it told you last time. Six brushes, layers, pose reference, symmetry. Free during the beta.",
   metadataBase: new URL("https://drawevolve.com"),
   icons: {
     icon: "/icon.png",
     apple: "/icon.png",
   },
   openGraph: {
-    title: "DrawEvolve — feedback for artists, not finished art",
-    description: "A drawing companion for iPad. You draw; we send back a short critique tuned to what you're working on.",
+    title: "DrawEvolve. A drawing app with a coach that remembers.",
+    description: "A universal iOS drawing app and an AI coach that remembers what it told you last time. Six brushes, layers, pose reference, symmetry. Free during the beta.",
     url: "https://drawevolve.com",
     siteName: "DrawEvolve",
     images: [
@@ -33,7 +32,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "DrawEvolve — feedback for artists",
+        alt: "DrawEvolve. A drawing app with an AI coach that remembers.",
       },
     ],
     locale: "en_US",
@@ -41,8 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "DrawEvolve — feedback for artists, not finished art",
-    description: "A drawing companion for iPad. You draw; we send back a short critique tuned to what you're working on.",
+    title: "DrawEvolve. A drawing app with a coach that remembers.",
+    description: "A universal iOS drawing app and an AI coach that remembers what it told you last time. Six brushes, layers, pose reference, symmetry. Free during the beta.",
     images: ["/og.png"],
   },
 };
@@ -53,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
+    <html lang="en" className={`${interTight.variable} ${inter.variable}`}>
       <body className="antialiased font-sans bg-paper text-ink">{children}</body>
     </html>
   );

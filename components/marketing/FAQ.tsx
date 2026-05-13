@@ -7,20 +7,28 @@ export default function FAQ() {
 
   const faqs = [
     {
-      q: "Does this finish my drawing for me?",
-      a: "No. There is no button that touches your canvas. We read what you've made and write back. That's it.",
+      q: "Does the app finish my drawing for me?",
+      a: "No. Nothing in the app touches your canvas. The coach reads what you made and writes back. You draw.",
     },
     {
-      q: "Will my drawings be used to train models?",
-      a: "No. Your work isn't used for training by default. If we ever run opt-in research, we'll ask first, in plain English.",
+      q: "Do I need an Apple Pencil?",
+      a: "No. Touch works. Pencil is great if you have one, but it isn't required.",
     },
     {
-      q: "Which devices are supported?",
-      a: "iPad with Apple Pencil, iPadOS 16 or later. We started here because that's where most serious sketching happens. Other platforms later.",
+      q: "Which devices?",
+      a: "Universal iOS. iPad and iPhone. iPad gets the most room. The iPhone build is real and shipping.",
     },
     {
-      q: "What happened to the old web prototype?",
-      a: "It got us through the question \"is this idea worth building?\". The answer was yes — so we rebuilt it native on iPad.",
+      q: "What about my drawings?",
+      a: "They stay yours. We don't publish or sell them. They aren't used to train models. If we ever change that we'll ask first, in plain language, before anything happens.",
+    },
+    {
+      q: "Is there a free version?",
+      a: "The whole app is free right now. We're in beta. Pricing isn't announced.",
+    },
+    {
+      q: "What's coming next?",
+      a: "Better brush sets, including oil and watercolor with real texture. More export options. Shareable evolution profiles so you can post your skill radar without screenshots.",
     },
   ];
 
@@ -31,8 +39,8 @@ export default function FAQ() {
           <p className="text-sm uppercase tracking-[0.2em] text-ink-mute mb-4">
             Questions
           </p>
-          <h2 className="font-serif text-4xl sm:text-5xl leading-tight tracking-tight text-ink">
-            The honest answers.
+          <h2 className="font-display text-4xl sm:text-5xl leading-tight tracking-tight text-ink">
+            Honest answers.
           </h2>
         </div>
 
@@ -47,11 +55,11 @@ export default function FAQ() {
                     className="flex w-full items-center justify-between gap-6 text-left py-6 group"
                     aria-expanded={isOpen}
                   >
-                    <span className="font-serif text-xl sm:text-2xl text-ink group-hover:text-accent-deep transition-colors">
+                    <span className="font-display text-xl sm:text-2xl text-ink group-hover:text-accent-deep transition-colors">
                       {item.q}
                     </span>
                     <span
-                      className={`flex-none text-ink-mute font-serif text-2xl leading-none transition-transform ${
+                      className={`flex-none text-ink-mute font-display text-2xl leading-none transition-transform ${
                         isOpen ? "rotate-45" : ""
                       }`}
                       aria-hidden="true"

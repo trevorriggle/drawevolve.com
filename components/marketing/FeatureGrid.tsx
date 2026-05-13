@@ -1,20 +1,20 @@
 export default function FeatureGrid() {
   const steps = [
     {
-      title: "Pick your focus",
-      body: "Tell us what you're working on — portraits, gesture, perspective, anatomy. Feedback comes back tuned to that.",
+      title: "Set the scene.",
+      body: "Pick a coach. Tell it what you're chasing this session. Proportion, gesture, value, edge control, anatomy, whatever.",
     },
     {
-      title: "Draw the way you draw",
-      body: "Pencil on iPad. No special tools, no parlor tricks. Sketch the way you already sketch.",
+      title: "Draw.",
+      body: "Touch or Pencil. Six brushes, layers, pose reference if you need one. Make a thing.",
     },
     {
-      title: "Send it",
-      body: "One tap. Your drawing is critiqued privately — never published, never sold.",
+      title: "Send.",
+      body: "One tap. A critique comes back, private to you, summary first.",
     },
     {
-      title: "Read the notes",
-      body: "A short read: what's working, where to push, and one small thing to try next session. History is kept so you can see yourself improve.",
+      title: "Send again.",
+      body: "This is where it gets useful. The coach reads what it told you on this drawing before. It checks whether you addressed it. Then it pushes on the next thing.",
     },
   ];
 
@@ -25,8 +25,8 @@ export default function FeatureGrid() {
           <p className="text-sm uppercase tracking-[0.2em] text-ink-mute mb-4">
             How it works
           </p>
-          <h2 className="font-serif text-4xl sm:text-5xl leading-tight tracking-tight text-ink text-balance">
-            Four steps. No miracle cure for drawing.
+          <h2 className="font-display text-4xl sm:text-5xl leading-tight tracking-tight text-ink text-balance">
+            Four steps. Same routine every time.
           </h2>
         </div>
 
@@ -34,10 +34,10 @@ export default function FeatureGrid() {
           {steps.map((step, i) => (
             <li key={step.title} className="border-t border-ink pt-6">
               <div className="flex items-baseline gap-4">
-                <span className="font-serif text-2xl text-ink-mute tabular-nums">
+                <span className="font-display text-2xl text-ink-mute tabular-nums">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="font-serif text-2xl text-ink">{step.title}</h3>
+                <h3 className="font-display text-2xl text-ink">{step.title}</h3>
               </div>
               <p className="mt-3 text-base leading-relaxed text-ink-soft text-pretty">
                 {step.body}

@@ -20,7 +20,7 @@ html {
 body {
   background: var(--paper);
   color: var(--ink);
-  font-feature-settings: "kern", "liga", "ss01";
+  font-feature-settings: "kern", "liga", "cv11";
 }
 
 ::selection {
@@ -30,9 +30,8 @@ body {
 
 @layer base {
   h1, h2, h3 {
-    font-family: var(--font-fraunces), ui-serif, Georgia, serif;
-    font-feature-settings: "ss01", "ss02";
-    letter-spacing: -0.01em;
+    font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.02em;
   }
 }
 

@@ -5,9 +5,15 @@ type Props = {
 export default function SiteHeader({ hrefPrefix = "" }: Props) {
   return (
     <header className="sticky top-0 z-50 bg-paper/85 backdrop-blur-md border-b border-rule">
-      <nav className="mx-auto max-w-6xl px-6 lg:px-8 flex items-center justify-between h-14">
-        <a href="/" className="font-serif text-xl text-ink leading-none tracking-tight">
-          DrawEvolve
+      <nav className="mx-auto max-w-6xl px-6 lg:px-8 flex items-center justify-between h-16">
+        <a href="/" className="flex items-center" aria-label="DrawEvolve home">
+          <img
+            src="/logo.png"
+            alt="DrawEvolve"
+            className="h-7 w-auto"
+            width={1129}
+            height={372}
+          />
         </a>
 
         <div className="hidden md:flex items-center gap-7 text-sm">
@@ -26,10 +32,10 @@ export default function SiteHeader({ hrefPrefix = "" }: Props) {
         </div>
 
         <a
-          href={`${hrefPrefix}#waitlist`}
+          href={`${hrefPrefix}#get-app`}
           className="inline-flex items-center rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-paper hover:bg-accent-deep transition-colors"
         >
-          Join the beta
+          Get the app
         </a>
       </nav>
     </header>

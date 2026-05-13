@@ -4,9 +4,15 @@ export default function SiteFooter() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8 py-12">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8">
           <div>
-            <p className="font-serif text-2xl text-ink leading-none">DrawEvolve</p>
-            <p className="mt-3 text-sm text-ink-mute max-w-xs">
-              A drawing companion for iPad. You draw; we send back a short critique.
+            <img
+              src="/logo.png"
+              alt="DrawEvolve"
+              className="h-7 w-auto"
+              width={1129}
+              height={372}
+            />
+            <p className="mt-4 text-sm text-ink-mute max-w-xs">
+              A drawing app with a coach that remembers.
             </p>
           </div>
 

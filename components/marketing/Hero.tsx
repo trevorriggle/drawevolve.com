@@ -6,7 +6,7 @@ import { track } from "@/lib/analytics";
 export default function Hero() {
   const scrollToWaitlist = () => {
     track("cta_join_beta_click", { location: "hero" });
-    document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("get-app")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -14,13 +14,13 @@ export default function Hero() {
       <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <div className="lg:col-span-7">
           <p className="text-sm uppercase tracking-[0.2em] text-ink-mute mb-6">
-            For artists on iPad
+            Universal iOS. iPad and iPhone.
           </p>
-          <h1 className="font-serif text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.02] tracking-tight text-ink text-balance">
-            A drawing companion that <em className="not-italic text-accent-deep">talks back</em>.
+          <h1 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.02] tracking-tight text-ink text-balance">
+            A drawing app whose <em className="not-italic text-accent-deep">AI coach remembers</em> what it told you last time.
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-ink-soft max-w-xl text-pretty">
-            Sketch on your iPad. Tap send. Get a short, specific critique tuned to what you're working on — proportion, value, gesture, whatever you're chasing. You finish the drawing. Always.
+            DrawEvolve is a full drawing app and an AI critic in one. You draw. You send. You get a critique that picks up where the last one left off, not a fresh take pretending you started today.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
@@ -28,13 +28,13 @@ export default function Hero() {
               onClick={scrollToWaitlist}
               className="inline-flex items-center justify-center rounded-full bg-ink px-6 py-3 text-base font-medium text-paper hover:bg-accent-deep transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
             >
-              Join the iPad beta
+              Join the TestFlight beta
             </button>
             <a
-              href="#how-it-works"
+              href="#inside"
               className="text-base font-medium text-ink-soft hover:text-ink underline underline-offset-[6px] decoration-rule hover:decoration-ink transition-colors"
             >
-              See how it works
+              See what's inside
             </a>
           </div>
         </div>

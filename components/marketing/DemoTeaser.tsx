@@ -6,10 +6,10 @@ export default function DemoTeaser() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="max-w-2xl mb-16">
           <p className="text-sm uppercase tracking-[0.2em] text-ink-mute mb-4">
-            What you get back
+            Critique two
           </p>
-          <h2 className="font-serif text-4xl sm:text-5xl leading-tight tracking-tight text-ink text-balance">
-            A few honest notes. Not a rewrite of your drawing.
+          <h2 className="font-display text-4xl sm:text-5xl leading-tight tracking-tight text-ink text-balance">
+            A second pass that remembers the first.
           </h2>
         </div>
 
@@ -25,38 +25,38 @@ export default function DemoTeaser() {
               />
             </div>
             <figcaption className="mt-3 text-sm text-ink-mute italic">
-              Your sketch — kept private.
+              Your sketch. Kept private.
             </figcaption>
           </figure>
 
           <div className="lg:col-span-5">
             <div className="border-l-2 border-accent pl-6">
               <p className="text-sm uppercase tracking-[0.2em] text-accent-deep mb-3">
-                Growth notes
+                Critique 2 · same drawing
               </p>
               <ol className="space-y-7">
                 <li>
-                  <p className="font-serif text-xl text-ink mb-1">
-                    Strong foundations
+                  <p className="font-display text-xl text-ink mb-1">
+                    Picking up where we left off
                   </p>
                   <p className="text-base leading-relaxed text-ink-soft text-pretty">
-                    Your proportions read well. Push the shoulder line a touch — the right side is sitting higher than the left.
+                    Last time we worked on value structure. The midtones on the cheek are stronger now. They&rsquo;re carrying the form. Nice.
                   </p>
                 </li>
                 <li>
-                  <p className="font-serif text-xl text-ink mb-1">
-                    Light and atmosphere
+                  <p className="font-display text-xl text-ink mb-1">
+                    The new thing to push
                   </p>
                   <p className="text-base leading-relaxed text-ink-soft text-pretty">
-                    Background values are competing with the face. Try knocking them back half a step so the head reads first.
+                    The shadow shape under the jaw is reading flat. There&rsquo;s a soft edge where the neck meets the jawline that wants to disappear into the shadow. Right now it&rsquo;s a hard line.
                   </p>
                 </li>
                 <li>
-                  <p className="font-serif text-xl text-ink mb-1">
-                    Try next
+                  <p className="font-display text-xl text-ink mb-1">
+                    Exercise for next pass
                   </p>
                   <p className="text-base leading-relaxed text-ink-soft text-pretty">
-                    Five minutes of loose gesture sketching before your next session — see if it carries into your line confidence.
+                    Three thumbnail studies of the jaw-to-neck transition. Five minutes. Don&rsquo;t render. Just block the shadow shape.
                   </p>
                 </li>
               </ol>

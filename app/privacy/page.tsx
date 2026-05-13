@@ -4,7 +4,7 @@ import SiteHeader from "@/components/marketing/SiteHeader";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | DrawEvolve",
-  description: "How DrawEvolve collects, uses, and protects your data — including your artwork, account information, and feedback history.",
+  description: "How DrawEvolve collects, uses, and protects your data, including your artwork, account information, and feedback history.",
   alternates: {
     canonical: "https://drawevolve.com/privacy",
   },
@@ -20,21 +20,21 @@ export default function PrivacyPage() {
           <p className="text-sm uppercase tracking-[0.2em] text-ink-mute mb-4">
             Last updated April 30, 2026
           </p>
-          <h1 className="font-serif text-5xl sm:text-6xl leading-[1.05] tracking-tight text-ink">
+          <h1 className="font-display text-5xl sm:text-6xl leading-[1.05] tracking-tight text-ink">
             Privacy Policy
           </h1>
         </header>
 
         <div className="space-y-12 text-base leading-relaxed text-ink-soft">
           <section>
-            <h2 className="font-serif text-2xl text-ink mb-4">Introduction</h2>
+            <h2 className="font-display text-2xl text-ink mb-4">Introduction</h2>
             <p>
               DrawEvolve is operated by RIG Tech LLC, an Ohio limited liability company (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;). This Privacy Policy describes how we collect, use, and share information when you use DrawEvolve (the &quot;Service&quot;). By using the Service, you agree to this Policy.
             </p>
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl text-ink mb-4">Information We Collect</h2>
+            <h2 className="font-display text-2xl text-ink mb-4">Information We Collect</h2>
             <ul className="list-disc pl-6 space-y-2 marker:text-ink-mute">
               <li><strong className="font-semibold text-ink">Account information:</strong> your email address, used for authentication via magic link, Sign in with Apple, or Sign in with Google.</li>
               <li><strong className="font-semibold text-ink">Artwork:</strong> drawings you create or upload to the Service.</li>
@@ -46,7 +46,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl text-ink mb-4">How We Use Your Information</h2>
+            <h2 className="font-display text-2xl text-ink mb-4">How We Use Your Information</h2>
             <ul className="list-disc pl-6 space-y-2 marker:text-ink-mute">
               <li>To provide and operate the Service (authenticate you, store your drawings, generate critiques).</li>
               <li>To send AI-generated feedback by transmitting your artwork and prompt to OpenAI for processing.</li>
@@ -60,7 +60,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl text-ink mb-4">Your Artwork</h2>
+            <h2 className="font-display text-2xl text-ink mb-4">Your Artwork</h2>
             <p>
               You retain full ownership of all drawings you create or upload. We use your artwork only to operate the Service: storing it for you, transmitting it to OpenAI to generate critiques, and displaying it back to you. We do not use your artwork to train any AI model, and OpenAI does not train its models on data submitted via its API. We do not display, share, publish, or distribute your artwork without your explicit action.
             </p>
@@ -70,7 +70,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl text-ink mb-4">Sharing and Disclosure</h2>
+            <h2 className="font-display text-2xl text-ink mb-4">Sharing and Disclosure</h2>
             <p>We share information with the following sub-processors solely to operate the Service:</p>
             <ul className="list-disc pl-6 space-y-2 mt-4 marker:text-ink-mute">
               <li><strong className="font-semibold text-ink">Apple</strong> (App Store, Sign in with Apple)</li>
@@ -87,14 +87,14 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl text-ink mb-4">Data Retention and Deletion</h2>
+            <h2 className="font-display text-2xl text-ink mb-4">Data Retention and Deletion</h2>
             <p>
               We retain your account and content while your account is active. You may delete your account at any time from within the app, which permanently removes your account, drawings, critique history, and associated metadata. Some logs may be retained briefly for security and abuse-prevention purposes before automatic deletion.
             </p>
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl text-ink mb-4">Your Rights and Choices</h2>
+            <h2 className="font-display text-2xl text-ink mb-4">Your Rights and Choices</h2>
             <p>
               Depending on your jurisdiction, you may have rights to access, correct, delete, or export your personal information. To exercise these rights, contact us at{" "}
               <a href="mailto:trevor@drawevolve.com" className="text-ink underline underline-offset-4 decoration-rule hover:decoration-ink transition-colors">
@@ -104,21 +104,21 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl text-ink mb-4">Children&apos;s Privacy</h2>
+            <h2 className="font-display text-2xl text-ink mb-4">Children&apos;s Privacy</h2>
             <p>
               DrawEvolve is intended for users 17 and older. We do not knowingly collect information from children under 17. If we learn we have collected information from a child under 17, we will delete it.
             </p>
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl text-ink mb-4">Changes to This Policy</h2>
+            <h2 className="font-display text-2xl text-ink mb-4">Changes to This Policy</h2>
             <p>
               We may update this Privacy Policy from time to time. If we make material changes, we will notify you in the app or by email. The &quot;Last updated&quot; date at the top reflects the most recent revision.
             </p>
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl text-ink mb-4">Contact Us</h2>
+            <h2 className="font-display text-2xl text-ink mb-4">Contact Us</h2>
             <p>RIG Tech LLC</p>
             <p className="mt-2">
               Email:{" "}
