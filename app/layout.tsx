@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Inter_Tight } from "next/font/google";
+import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const interTight = Inter_Tight({
+const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
+  axes: ["opsz"],
 });
 
 const inter = Inter({
@@ -14,9 +15,19 @@ const inter = Inter({
   display: "swap",
 });
 
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+  weight: ["400", "500"],
+});
+
+const description =
+  "A full iOS drawing studio with an AI coach that remembers what it told you last time. Four critique voices, Eve the coach, and a record of whether you acted on the feedback. It will never draw for you.";
+
 export const metadata: Metadata = {
   title: "DrawEvolve. A drawing app with a coach that remembers.",
-  description: "A universal iOS drawing app and an AI coach that remembers what it told you last time. Six brushes, layers, pose reference, symmetry. Free during the beta.",
+  description,
   metadataBase: new URL("https://drawevolve.com"),
   icons: {
     icon: "/icon.png",
@@ -24,7 +35,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "DrawEvolve. A drawing app with a coach that remembers.",
-    description: "A universal iOS drawing app and an AI coach that remembers what it told you last time. Six brushes, layers, pose reference, symmetry. Free during the beta.",
+    description,
     url: "https://drawevolve.com",
     siteName: "DrawEvolve",
     images: [
@@ -41,7 +52,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "DrawEvolve. A drawing app with a coach that remembers.",
-    description: "A universal iOS drawing app and an AI coach that remembers what it told you last time. Six brushes, layers, pose reference, symmetry. Free during the beta.",
+    description,
     images: ["/og.png"],
   },
 };
@@ -52,8 +63,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${interTight.variable} ${inter.variable}`}>
-      <body className="antialiased font-sans bg-paper text-ink">{children}</body>
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${inter.variable} ${jetbrains.variable}`}
+    >
+      <body className="antialiased font-sans bg-studio text-bone">
+        {children}
+      </body>
     </html>
   );
 }

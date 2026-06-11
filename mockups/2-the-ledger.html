@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Direction 02 — The Ledger · DrawEvolve mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0E1114;
+    --panel: #13181D;
+    --panel-2: #171E24;
+    --ink: #E6EAEE;
+    --soft: #9AA6AF;
+    --mute: #67737C;
+    --line: #232C34;
+    --amber: #F5B83D;
+    --ok: #5BD992;
+    --open: #F08A6B;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
+
+  .mocklabel {
+    background: var(--amber); color: #161102;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 8px 24px;
+  }
+
+  /* left session rail running the whole page */
+  .rail {
+    position: fixed; top: 0; bottom: 0; left: 0; width: 64px;
+    border-right: 1px solid var(--line);
+    display: flex; flex-direction: column; justify-content: center; gap: 64px;
+    align-items: center;
+    background: var(--bg);
+    z-index: 5;
+  }
+  .rail span {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10.5px; color: var(--mute);
+    writing-mode: vertical-rl;
+    letter-spacing: 0.2em;
+  }
+  .rail span.now { color: var(--amber); }
+  .page { margin-left: 64px; }
+
+  header.site {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 4vw;
+    border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; background: rgba(14,17,20,0.88); backdrop-filter: blur(8px);
+    z-index: 4;
+  }
+  .wordmark { font-weight: 600; font-size: 19px; letter-spacing: -0.01em; }
+  .wordmark .tick { color: var(--amber); }
+  nav.site a { color: var(--soft); text-decoration: none; font-size: 14px; margin-left: 26px; }
+  nav.site a:hover { color: var(--ink); }
+  nav.site a.cta {
+    color: #161102; background: var(--amber);
+    padding: 9px 16px; border-radius: 6px; font-weight: 500;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
+    gap: 4vw;
+    padding: 11vh 4vw 12vh;
+    max-width: 1380px;
+    align-items: center;
+  }
+  .kicker {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--mute); margin-bottom: 26px;
+  }
+  .kicker b { color: var(--amber); font-weight: 500; }
+  .hero h1 {
+    font-size: clamp(40px, 4.8vw, 66px);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+  .hero h1 .dim { color: var(--mute); }
+  .hero .sub { margin-top: 26px; color: var(--soft); max-width: 46ch; font-size: 18px; }
+  .actions { margin-top: 40px; display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+  .btn {
+    background: var(--amber); color: #161102;
+    font-weight: 500; text-decoration: none;
+    padding: 13px 24px; border-radius: 8px; font-size: 16px;
+  }
+  .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .btn:hover { filter: brightness(1.08); }
+
+  /* session record card */
+  .record {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  }
+  .record .bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--line);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mute);
+  }
+  .record .bar b { color: var(--ink); font-weight: 500; }
+  .entry { padding: 20px 18px; border-bottom: 1px solid var(--line); }
+  .entry:last-child { border-bottom: 0; }
+  .entry .stamp {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11.5px; color: var(--mute);
+    display: flex; gap: 14px; margin-bottom: 10px;
+  }
+  .entry .stamp .pass { color: var(--amber); }
+  .entry p { font-size: 15.5px; color: var(--soft); line-height: 1.55; }
+  .entry p b { color: var(--ink); font-weight: 500; }
+  .chips { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  .chip {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px; letter-spacing: 0.06em;
+    padding: 4px 10px; border-radius: 4px;
+    border: 1px solid var(--line);
+  }
+  .chip.ok { color: var(--ok); border-color: rgba(91,217,146,0.35); }
+  .chip.open { color: var(--open); border-color: rgba(240,138,107,0.35); }
+  .chip.next { color: var(--amber); border-color: rgba(245,184,61,0.35); }
+
+  /* ---------- MY EVOLUTION ---------- */
+  .evolution {
+    border-top: 1px solid var(--line);
+    padding: 12vh 4vw 13vh;
+    max-width: 1380px;
+  }
+  .evolution h2 {
+    font-size: clamp(32px, 3.4vw, 48px);
+    font-weight: 600; letter-spacing: -0.025em; line-height: 1.08;
+    max-width: 24ch;
+  }
+  .evolution .lede { margin-top: 20px; color: var(--soft); max-width: 52ch; }
+  .evo-grid {
+    margin-top: 64px;
+    display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 4vw;
+    align-items: center;
+  }
+  .radar-card, .log-card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+  }
+  .radar-card { padding: 28px; }
+  .radar-card h3, .log-card h3 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--mute); font-weight: 500;
+  }
+  .radar-wrap { margin-top: 8px; }
+  .legend { display: flex; gap: 22px; margin-top: 10px; font-family: "JetBrains Mono", monospace; font-size: 11.5px; color: var(--mute); }
+  .legend i { display: inline-block; width: 18px; height: 2px; vertical-align: middle; margin-right: 8px; }
+  .legend .w1 i { background: var(--mute); }
+  .legend .w9 i { background: var(--amber); }
+  .legend .w9 { color: var(--amber); }
+
+  .log-card { overflow: hidden; }
+  .log-card h3 { padding: 18px 22px; border-bottom: 1px solid var(--line); }
+  .log-row {
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 18px; align-items: center;
+    padding: 16px 22px;
+    border-bottom: 1px solid var(--line);
+    font-size: 14.5px;
+  }
+  .log-row:last-child { border-bottom: 0; }
+  .log-row .when { font-family: "JetBrains Mono", monospace; font-size: 11.5px; color: var(--mute); }
+  .log-row .what { color: var(--soft); }
+  .log-row .what b { color: var(--ink); font-weight: 500; }
+
+  footer.mock { padding: 36px 4vw; color: var(--mute); font-size: 13px; border-top: 1px solid var(--line); font-family: "JetBrains Mono", monospace; }
+
+  @media (max-width: 980px) {
+    .rail { display: none; }
+    .page { margin-left: 0; }
+    .hero, .evo-grid { grid-template-columns: 1fr; }
+    .record { margin-top: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="mocklabel">Direction 02 · “The Ledger” — static mockup · placeholder data</div>
+
+<aside class="rail" aria-hidden="true">
+  <span>session 01</span><span>session 02</span><span class="now">session 03 — now</span><span>session 04</span>
+</aside>
+
+<div class="page">
+
+<header class="site">
+  <div class="wordmark">DrawEvolve<span class="tick">_</span></div>
+  <nav class="site">
+    <a href="#">The loop</a><a href="#">Voices</a><a href="#">Eve</a><a href="#">My Evolution</a>
+    <a class="cta" href="#">Get the beta</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <p class="kicker">iOS studio + critique engine · <b>feedback with state</b></p>
+    <h1>Most feedback evaporates.<br><span class="dim">Yours goes on record.</span></h1>
+    <p class="sub">Every critique in DrawEvolve is written with your previous ones on the desk. The coach checks what it flagged, verifies what you fixed, and pushes the next thing. A paper trail for your improvement.</p>
+    <div class="actions">
+      <a class="btn" href="#">Get the beta</a>
+      <a class="btn ghost" href="#">Read a real session log</a>
+    </div>
+  </div>
+
+  <div class="record" role="figure" aria-label="A session record showing two critiques on one drawing">
+    <div class="bar"><span><b>untitled-portrait.draw</b> · session record</span><span>voice: studio mentor</span></div>
+    <div class="entry">
+      <div class="stamp mono"><span class="pass">PASS 01</span><span>tue 23:42</span></div>
+      <p>“Likeness is coming along. <b>Flagging value structure:</b> the shadow side of the face matches the lit side. Squint — the head goes flat.”</p>
+      <div class="chips"><span class="chip open">⚑ OPEN · value structure</span></div>
+    </div>
+    <div class="entry">
+      <div class="stamp mono"><span class="pass">PASS 02</span><span>thu 21:08</span></div>
+      <p>“<b>You addressed the value structure from Pass 01</b> — the darks under the jaw are doing real work now. New flag: the jaw edge is uniformly hard. Lose it where it meets the neck.”</p>
+      <div class="chips">
+        <span class="chip ok">✓ ADDRESSED · value structure</span>
+        <span class="chip open">⚑ OPEN · edge control</span>
+        <span class="chip next">→ EXERCISE · 3 thumbnail studies</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="evolution">
+  <p class="kicker">My Evolution · <b>the payoff</b></p>
+  <h2>Watch yourself get better. As data, not vibes.</h2>
+  <p class="lede">Critiques get classified into eight skill categories and charted over time. The radar fills in as the record grows — proof you can point at.</p>
+
+  <div class="evo-grid">
+    <div class="radar-card">
+      <h3>Skill radar · 8 categories</h3>
+      <div class="radar-wrap">
+        <svg viewBox="0 0 360 340" role="img" aria-label="Radar chart comparing week 1 and week 9 across eight skill categories">
+          <g transform="translate(180,170)">
+            <!-- grid rings -->
+            <g fill="none" stroke="#232C34">
+              <polygon points="0,-120 84.9,-84.9 120,0 84.9,84.9 0,120 -84.9,84.9 -120,0 -84.9,-84.9"/>
+              <polygon points="0,-90 63.6,-63.6 90,0 63.6,63.6 0,90 -63.6,63.6 -90,0 -63.6,-63.6"/>
+              <polygon points="0,-60 42.4,-42.4 60,0 42.4,42.4 0,60 -42.4,42.4 -60,0 -42.4,-42.4"/>
+              <polygon points="0,-30 21.2,-21.2 30,0 21.2,21.2 0,30 -21.2,21.2 -30,0 -21.2,-21.2"/>
+              <path d="M0,-120 L0,120 M-120,0 L120,0 M-84.9,-84.9 L84.9,84.9 M84.9,-84.9 L-84.9,84.9"/>
+            </g>
+            <!-- week 1 -->
+            <polygon points="0,-48 28.3,-28.3 36,0 21.2,21.2 0,42 -25.5,25.5 -54,0 -29.7,-29.7"
+              fill="rgba(103,115,124,0.16)" stroke="#67737C" stroke-width="1.5"/>
+            <!-- week 9 -->
+            <polygon points="0,-96 59.4,-59.4 78,0 46.7,46.7 0,78 -46.7,46.7 -96,0 -67.9,-67.9"
+              fill="rgba(245,184,61,0.13)" stroke="#F5B83D" stroke-width="2"/>
+            <!-- labels -->
+            <g font-family="JetBrains Mono, monospace" font-size="10.5" fill="#9AA6AF" text-anchor="middle">
+              <text y="-132">value</text>
+              <text x="104" y="-96">line</text>
+              <text x="142" y="4">anatomy</text>
+              <text x="104" y="104">color</text>
+              <text y="138">composition</text>
+              <text x="-104" y="104">perspective</text>
+              <text x="-138" y="4">subject</text>
+              <text x="-104" y="-96">general</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="legend">
+        <span class="w1"><i></i>week 1</span>
+        <span class="w9"><i></i>week 9</span>
+      </div>
+    </div>
+
+    <div class="log-card">
+      <h3>The record · filtered to “value”</h3>
+      <div class="log-row">
+        <span class="when">WK 1 · pass 01</span>
+        <span class="what">“Shadow side matches the lit side — <b>flat</b>.”</span>
+        <span class="chip open">⚑ flagged</span>
+      </div>
+      <div class="log-row">
+        <span class="when">WK 1 · pass 02</span>
+        <span class="what">“Darks under the jaw are <b>doing real work now</b>.”</span>
+        <span class="chip ok">✓ addressed</span>
+      </div>
+      <div class="log-row">
+        <span class="when">WK 4 · new piece</span>
+        <span class="what">“Same instinct that fixed the portrait — <b>apply it to this figure’s torso</b>.”</span>
+        <span class="chip next">→ carried over</span>
+      </div>
+      <div class="log-row">
+        <span class="when">WK 9 · new piece</span>
+        <span class="what">“Value isn’t your weak point anymore. <b>Edges are.</b> Switching focus.”</span>
+        <span class="chip ok">✓ category climbing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="mock">// motion (described, not built): the left rail tracks scroll like a session timeline · chips count up · the week-1 polygon interpolates into week-9 when the radar enters the viewport. all data above is placeholder.</footer>
+
+</div>
+</body>
+</html>

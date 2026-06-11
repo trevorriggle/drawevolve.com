@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Direction 03 — Red Pencil · DrawEvolve mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0C0B0A;
+    --paper: #F4F0E6;
+    --soft: #B7B2A6;
+    --mute: #7C786E;
+    --line: #28251F;
+    --red: #E63B22;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--paper);
+    font-family: "Archivo", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .serif { font-family: "Instrument Serif", Georgia, serif; }
+
+  .mocklabel {
+    background: var(--red); color: #fff;
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 8px 24px; font-weight: 700;
+  }
+
+  header.site {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 4vw;
+    border-bottom: 2px solid var(--paper);
+  }
+  .wordmark { font-weight: 900; font-size: 19px; letter-spacing: 0.02em; text-transform: uppercase; }
+  .wordmark span { color: var(--red); }
+  nav.site a {
+    color: var(--soft); text-decoration: none; font-size: 13.5px; margin-left: 26px;
+    text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700;
+  }
+  nav.site a:hover { color: var(--paper); }
+  nav.site a.cta { color: var(--red); }
+  nav.site a.cta:hover { color: var(--paper); }
+
+  /* ---------- HERO ---------- */
+  .hero { padding: 10vh 4vw 12vh; border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
+  .hero .kicker {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--mute); margin-bottom: 4vh;
+  }
+  .hero h1 {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: clamp(64px, 12.5vw, 190px);
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+  }
+  .hero h1 .strike { position: relative; color: var(--mute); }
+  .hero h1 .strike::after {
+    content: "";
+    position: absolute; left: -2%; right: -2%; top: 48%;
+    height: 0.075em;
+    background: var(--red);
+    transform: rotate(-1.6deg);
+  }
+  .hero h1 .circled { position: relative; display: inline-block; }
+  .hero h1 svg.scrawl {
+    position: absolute; inset: -14% -7% -18% -6%;
+    width: 113%; height: 132%;
+    overflow: visible;
+    pointer-events: none;
+  }
+  .hero h1 svg.scrawl path {
+    fill: none; stroke: var(--red); stroke-width: 7;
+    stroke-linecap: round;
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 1500;
+    animation: scrawl 0.9s ease-out 0.5s forwards;
+  }
+  @keyframes scrawl { to { stroke-dashoffset: 0; } }
+
+  .hero .standfirst {
+    margin-top: 6vh;
+    display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 4vw;
+    align-items: end;
+  }
+  .standfirst .serifline {
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+    font-size: clamp(24px, 2.6vw, 34px);
+    line-height: 1.3;
+  }
+  .standfirst .serifline b { color: var(--red); font-weight: 400; font-style: normal; }
+  .standfirst aside { color: var(--soft); font-size: 15.5px; max-width: 38ch; }
+  .actions { margin-top: 5vh; display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    border: 2px solid var(--paper);
+    color: var(--paper); text-decoration: none;
+    font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; font-size: 15px;
+    padding: 16px 30px;
+  }
+  .btn:hover { background: var(--red); border-color: var(--red); color: #fff; }
+  .flag {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--mute);
+  }
+  .flag b { color: var(--paper); }
+
+  /* ---------- ITERATION SECTION ---------- */
+  .crit { padding: 12vh 4vw 13vh; }
+  .crit .label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 5vh;
+  }
+  .crit blockquote {
+    font-family: "Instrument Serif", serif;
+    font-size: clamp(36px, 6vw, 84px);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    max-width: 18ch;
+  }
+  .crit blockquote .underline {
+    box-shadow: inset 0 -0.14em 0 0 var(--red);
+  }
+  .crit .attribution {
+    margin-top: 4vh;
+    font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--mute);
+  }
+  .crit .attribution b { color: var(--paper); }
+
+  .evidence {
+    margin-top: 9vh;
+    display: grid;
+    grid-template-columns: minmax(0,3fr) auto minmax(0,3fr) minmax(0,5fr);
+    gap: 3vw;
+    align-items: center;
+  }
+  .evidence figure { border: 1px solid var(--line); padding: 12px; background: #111009; }
+  .evidence figcaption {
+    margin-top: 10px;
+    font-size: 11.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--mute);
+    display: flex; justify-content: space-between;
+  }
+  .evidence figcaption .ok { color: var(--red); }
+  .arrow { color: var(--red); }
+  .arrow svg { display: block; width: 56px; height: 32px; }
+  .evidence .case { color: var(--soft); font-size: 16px; max-width: 40ch; }
+  .evidence .case p + p { margin-top: 16px; }
+  .evidence .case b { color: var(--paper); }
+  .evidence .case .voices-note { color: var(--mute); font-size: 14px; margin-top: 22px; }
+  .evidence .case .voices-note em { color: var(--red); font-style: normal; }
+  svg.sketch { display: block; width: 100%; height: auto; }
+
+  footer.mock { padding: 36px 4vw; color: var(--mute); font-size: 13px; border-top: 1px solid var(--line); }
+
+  @media (max-width: 980px) {
+    .hero .standfirst, .evidence { grid-template-columns: 1fr; }
+    .arrow svg { transform: rotate(90deg); margin: 4px 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero h1 svg.scrawl path { animation: none; stroke-dashoffset: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="mocklabel">Direction 03 · “Red Pencil” — static mockup · placeholder sketches</div>
+
+<header class="site">
+  <div class="wordmark">Draw<span>Evolve</span></div>
+  <nav class="site">
+    <a href="#">The loop</a><a href="#">Voices</a><a href="#">Eve</a><a href="#">Evolution</a>
+    <a class="cta" href="#">Get the beta →</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <p class="kicker">A drawing app for iPad &amp; iPhone — with a critic in it</p>
+  <h1>
+    <span class="strike">Likes</span><br>
+    don’t<br>
+    <span class="circled">teach.
+      <svg class="scrawl" viewBox="0 0 400 160" aria-hidden="true">
+        <path d="M 60 84 C 90 18 330 6 372 62 C 404 110 290 152 160 148 C 70 145 18 116 44 74 C 60 49 120 30 196 28"/>
+      </svg>
+    </span>
+  </h1>
+
+  <div class="standfirst">
+    <p class="serifline">Critique does. DrawEvolve is a full drawing studio with a coach that remembers what it told you — <b>and it will never draw for you.</b></p>
+    <aside>Six brushes, layers, symmetry, pose reference. Then: Get Feedback. Four critics with real opinions, a coach named Eve, and a record of whether you acted on any of it.</aside>
+  </div>
+
+  <div class="actions">
+    <a class="btn" href="#">Get the beta</a>
+    <p class="flag">No generation. No autocomplete. <b>Your hand only.</b></p>
+  </div>
+</section>
+
+<section class="crit">
+  <p class="label">Pass 02 · Same drawing · It read its own last critique first</p>
+
+  <blockquote class="serif">“You fixed the <span class="underline">value structure</span> I flagged last time. Now your edges are the problem.”</blockquote>
+  <p class="attribution">— <b>The Crit</b> · one of four voices, plus yours if you write one</p>
+
+  <div class="evidence">
+    <figure>
+      <svg class="sketch" viewBox="0 0 300 360" role="img" aria-label="Pass one, flat values">
+        <g fill="none" stroke="#CFC9BB" stroke-linecap="round" opacity="0.6">
+          <path d="M118 70 C 140 50 182 54 199 80" stroke-width="2.2"/>
+          <path d="M199 80 C 215 104 213 142 201 166" stroke-width="2"/>
+          <path d="M201 166 C 193 192 176 212 152 220" stroke-width="2.2"/>
+          <path d="M152 220 C 134 224 119 213 110 196" stroke-width="2"/>
+          <path d="M110 196 C 100 175 99 138 105 110 C 107 92 111 80 118 70" stroke-width="1.8"/>
+          <path d="M126 122 C 138 116 148 116 154 120" stroke-width="2"/>
+          <path d="M163 120 C 171 116 181 116 188 121" stroke-width="2"/>
+          <path d="M157 128 C 155 146 152 158 148 167 C 153 172 161 172 165 168" stroke-width="1.8"/>
+          <path d="M139 192 C 150 198 164 197 173 190" stroke-width="2.2"/>
+          <g stroke-width="1.3" opacity="0.45">
+            <path d="M120 140 L 132 136"/><path d="M120 150 L 134 145"/><path d="M121 160 L 134 155"/>
+          </g>
+        </g>
+      </svg>
+      <figcaption><span>Pass 01</span><span>flagged: values</span></figcaption>
+    </figure>
+
+    <div class="arrow" aria-hidden="true">
+      <svg viewBox="0 0 56 32"><path d="M2 16 H 46 M 36 6 L 48 16 L 36 26" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+    </div>
+
+    <figure>
+      <svg class="sketch" viewBox="0 0 300 360" role="img" aria-label="Pass two, committed shadows">
+        <g fill="none" stroke="#F4F0E6" stroke-linecap="round" opacity="0.92">
+          <path d="M118 70 C 140 50 182 54 199 80" stroke-width="2.4"/>
+          <path d="M199 80 C 215 104 213 142 201 166" stroke-width="2.2"/>
+          <path d="M201 166 C 193 192 176 212 152 220" stroke-width="2.4"/>
+          <path d="M152 220 C 134 224 119 213 110 196" stroke-width="2.2"/>
+          <path d="M110 196 C 100 175 99 138 105 110 C 107 92 111 80 118 70" stroke-width="2"/>
+          <path d="M126 122 C 138 116 148 116 154 120" stroke-width="2.2"/>
+          <path d="M163 120 C 171 116 181 116 188 121" stroke-width="2.2"/>
+          <path d="M157 128 C 155 146 152 158 148 167 C 153 172 161 172 165 168" stroke-width="2"/>
+          <path d="M139 192 C 150 198 164 197 173 190" stroke-width="2.4"/>
+          <g stroke-width="1.6" opacity="0.85">
+            <path d="M112 120 L 130 112"/><path d="M111 132 L 132 123"/><path d="M111 144 L 133 134"/>
+            <path d="M112 156 L 134 146"/><path d="M113 168 L 135 158"/><path d="M116 180 L 136 171"/>
+            <path d="M122 192 L 139 184"/><path d="M130 204 L 144 197"/>
+          </g>
+        </g>
+      </svg>
+      <figcaption><span>Pass 02</span><span class="ok">✓ addressed</span></figcaption>
+    </figure>
+
+    <div class="case">
+      <p><b>This is the whole product.</b> Draw. Get critiqued. Act on it. Get re-critiqued against your own past — on this drawing, and across your last several.</p>
+      <p>Then My Evolution charts the record into eight skill categories, so improvement is something you can see, not something you feel on a good day.</p>
+      <p class="voices-note">Too harsh? Pick <em>Studio Mentor</em> instead. Want drills? <em>Fundamentals Coach</em>. Want a Florentine workshop? <em>Renaissance Master</em>. The critic is a choice.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="mock">Motion (mostly described): the red scrawl above draws itself in (built — reload to replay). In the full site: red underlines draw in on scroll, the strike-through stamps in after the headline settles, type otherwise static. Sketches are placeholder SVGs.</footer>
+
+</body>
+</html>
